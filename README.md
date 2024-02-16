@@ -2,9 +2,9 @@
 
 ## Instructor: Dr. Phu Phung
 
-## Student name: Vamsi Krishna Madavarapu
+## Student name: Sohan Chidvilas Bodapati
 
-## Student mail: madavava@mail.uc.edu
+## Student mail: bodapass@mail.uc.edu
 
 ![headshot](assets/img/Pro.jpg){width=150px height=150px}
 
@@ -39,11 +39,11 @@ I have utilized various features, such as the digital clock, analog clock, and s
 The Weatherbit API is available to the public, but in order to utilise it, each user must create a unique API key, which they must then integrate into their code. For example, the JokesAPI presents a random joke instead of requiring an API key.
 The free flag counter website is embedded into index.html and adds a new country flag
 
-![Javascript work of alert](11(2).png)
+![Javascript work of alert](11 (2).png)
 
 The primary goal of the website's cookie management is to notify users that they have already visited this page at a specific time. The website shows a welcome message the first time a user sees it, and it shows a "welcome back" message every time a user returns, followed by the previous timestamp. To improve usability, cookies have a 30-day lifespan.
 
-![Welcome back alert](12(2).png)
+![Welcome back alert](12 (2).png)
 
 
 In addition to that, I have intergrated a random luck genratore with a java script that that just genrates a random lucky number accordingly. From lab2 we have a major code for the clock and the analog. 
