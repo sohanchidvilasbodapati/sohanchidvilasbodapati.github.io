@@ -51,6 +51,16 @@
         </div>
     </div>
 </div>
+            <i>Ajax requests</i><br>
+              Your input: 
+                <input name="data" 
+                     onkeypress="console.log('You have pressed a key')" id="data"> 
+                <input class="button round" type="button" value="Ajax Echo" onclick="getEcho()">
+                <input class="button round" type="button" value="Ajax jQuery GET" onclick="jQueryAjax()">
+                <input class="button round" type="button" value="Ajax jQuery POST" onclick="jQueryAjaxPost()">
+                <input class="button round" type="button" value="guess Age" onclick="guessAge($('#data').val())">
+              <div id="response"></div>
+          </div>
 <script type="text/javascript">
     function displayTime() {
       document.getElementById('digit-clock').innerHTML = "Current time:" + new Date();
