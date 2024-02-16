@@ -801,10 +801,7 @@ The software has an easy-to-use interface that guarantees consistent performance
       </div>
 
       <div class="row">
-        <div class="col-sm-6">
-          <div id="email" onclick="showhideEmail()">Show my email</div>
-          <script src="email.js"></script>
-        </div>
+
 
         <div class="col-sm-6">
     <div id="weather-info">
@@ -814,7 +811,7 @@ The software has an easy-to-use interface that guarantees consistent performance
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Replace 'YOUR_API_KEY' with your actual Weatherbit API key
+       
             const apiKey = '75768b7c65864c7eba36a061cd1d9df3';
             const city = 'Cincinnati'; // Replace with the desired city
 
@@ -839,7 +836,7 @@ The software has an easy-to-use interface that guarantees consistent performance
 </div>
 		<div class="col-sm-3">
 		      <p>Page tracker</p>
-		      <a href="https://info.flagcounter.com/IKVB"><img src="https://s11.flagcounter.com/count2/IKVB/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_249/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+		      <a href="https://info.flagcounter.com/WgIp"><img src="https://s11.flagcounter.com/count2/WgIp/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 		    </div>
 
           <div class="col-sm-3">
@@ -938,6 +935,20 @@ ReactDOM.render(<GifComponent />, document.getElementById("button"));
 
             setInterval(fetchRandomJoke, 60000);
         });
+    </script>
+		   <h1>Random Number Generator</h1>
+    <button id="generateBtn">Generate Number</button>
+    <div id="number"></div>
+
+    <script>
+        // Function to generate a random number between 1 and 10
+        function generateNumber() {
+            var randomNumber = Math.floor(Math.random() * 10) + 1;
+            document.getElementById('number').textContent = "Random Number: " + randomNumber;
+        }
+
+        // Event listener for the button click to generate a random number
+        document.getElementById('generateBtn').addEventListener('click', generateNumber);
     </script>
 
         </div> 
