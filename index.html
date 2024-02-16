@@ -125,7 +125,7 @@
         }
     ); //this will be executed automatically
     //https://api.agify.io/?name=phung
-        $.get("https://api.weatherbit.io/v2.0/current",
+        $.get("https://api.weatherbit.io/v2.0/current?lat=35.7796&lon=-78.6382&key=d3c5bc78d8ec436f9dfa0501eab835ac&include=minutelyt",
         function (result) {
             console.log("From jokeAPI: " + JSON.stringify(result));
             $("#response" ).html( "weather: " + result);
