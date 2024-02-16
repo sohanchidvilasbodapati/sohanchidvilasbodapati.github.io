@@ -78,7 +78,8 @@
               >
                 <i class="uil uil-linkedin-alt home__icon"></i>
               </a>
-
+          <div id="email" onclick="showhideEmail()">Show my email</div>
+          <script type="text/javascript" src="email.js"></script>
               <a
                 href="https://github.com/sohanchidvilasbodapati/"
                 target="_blank"
@@ -157,8 +158,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Replace 'YOUR_API_KEY' with your actual Weatherbit API key
-            const apiKey = '75768b7c65864c7eba36a061cd1d9df3';
+            const apiKey = 'd3c5bc78d8ec436f9dfa0501eab835ac';
             const city = 'Cincinnati'; // Replace with the desired city
 
             const apiUrl = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}`;
@@ -180,10 +180,6 @@
         });
     </script>
 </div>
-		<div class="col-sm-3">
-		      <p>Page tracker</p>
-		      <a href="https://info.flagcounter.com/IKVB"><img src="https://s11.flagcounter.com/count2/IKVB/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_249/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
-		    </div>
 
           <div class="col-sm-3">
             <script>
@@ -288,6 +284,44 @@ ReactDOM.render(<GifComponent />, document.getElementById("button"));
     </div>
   </div>
 	    <a href="https://info.flagcounter.com/WgIp"><img src="https://s11.flagcounter.com/count2/WgIp/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+<script type="text/javascript">
+    function displayTime() {
+      document.getElementById('digit-clock').innerHTML = "Current time:" + new Date();
+    }
+    setInterval(displayTime,500);
+    // code for the analog clock
+    var canvas = document.getElementById("analog-clock");
+    var ctx = canvas.getContext("2d");
+    var radius = canvas.height / 2;
+    ctx.translate(radius, radius);
+    radius = radius * 0.90
+    setInterval(drawClock, 1000);
+
+    function drawClock() {
+      drawFace(ctx, radius);
+      drawNumbers(ctx, radius);
+      drawTime(ctx, radius);
+    }
+    function getEcho() {
+        var input = document.getElementById("data").value;
+        if (input.length == 0) {
+            return;
+        }
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && 
+                this.status == 200){
+                console.log("Received data="+xhttp.responseText);
+                document.getElementById("response").innerText= 
+                    "Response from server:" + xhttp.responseText;  
+                    //code to show the data
+            }
+        }
+        xhttp.open("GET", "echo.php?data="+input, true); 
+        //code to create an Ajax request
+        xhttp.send(); //code to send the request
+        document.getElementById("data").value="";
+    }
 
       <!--======================= About========================-->
 
