@@ -141,6 +141,153 @@
           </div>
         </div>
       </section>
+	    
+    <script>       
+      <div class="row">
+        <div class="col-sm-6">
+          <div id="email" onclick="showhideEmail()">Show my email</div>
+          <script src="email.js"></script>
+        </div>
+
+        <div class="col-sm-6">
+    <div id="weather-info">
+        <h2>Weather Information</h2>
+        <p id="temperature"></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Replace 'YOUR_API_KEY' with your actual Weatherbit API key
+            const apiKey = '75768b7c65864c7eba36a061cd1d9df3';
+            const city = 'Cincinnati'; // Replace with the desired city
+
+            const apiUrl = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.data && data.data.length > 0) {
+                        const temperature = data.data[0].temp;
+                        document.getElementById('temperature').innerText = `Current Temperature: ${temperature}°C`;
+                    } else {
+                        document.getElementById('temperature').innerText = 'Unable to fetch weather data.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching weather data:', error);
+                    document.getElementById('temperature').innerText = 'Error occurred while fetching weather data.';
+                });
+        });
+    </script>
+</div>
+		<div class="col-sm-3">
+		      <p>Page tracker</p>
+		      <a href="https://info.flagcounter.com/IKVB"><img src="https://s11.flagcounter.com/count2/IKVB/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_249/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+		    </div>
+
+          <div class="col-sm-3">
+            <script>
+            // Function to set or retrieve the value of a cookie
+            function setCookie(name, value, days) {
+              var expires = "";
+              if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+              }
+              document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+
+            function getCookie(name) {
+              var nameEQ = name + "=";
+              var ca = document.cookie.split(';');
+              for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+              }
+              return null;
+            }
+
+            function displayWelcomeMessage() {
+              var lastVisit = getCookie("lastVisit");
+              if (!lastVisit) {
+                setCookie("lastVisit", new Date().toISOString(), 30); // Set cookie to expire in 30 days
+                alert("Welcome to my homepage!");
+              } else {
+                // Returning visit
+                var lastVisitDate = new Date(lastVisit);
+                alert("Welcome back! Your last visit was " + lastVisitDate.toLocaleString());
+                setCookie("lastVisit", new Date().toISOString(), 30); 
+              }
+            }
+            window.onload = displayWelcomeMessage; 
+          </script>
+
+          </div>
+          <div id="button"></div>
+
+<script type="text/babel">
+function GifComponent() {
+    const [showGif, setShowGif] = React.useState(false);
+
+    return (
+        <div>
+            <h1 id="giff">GIF Integration with React</h1>
+            <button onClick={() => setShowGif(!showGif)}>
+                {showGif ? "Hide GIF" : "Show GIF"}
+            </button>
+            {showGif && (
+                <img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" alt="GIF" />
+            )}
+        </div>
+    );
+}
+
+ReactDOM.render(<GifComponent />, document.getElementById("button"));
+</script>
+</div>
+           <div id="response">
+    <div id="joke-container">
+        <h2>Random Joke</h2>
+        <p id="joke"></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const apiKey = 'YOUR_API_KEY';
+
+            function fetchRandomJoke() {
+                const apiUrl = 'https://v2.jokeapi.dev/joke/Any'; // You can customize the API endpoint
+
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.error) {
+                            console.error('Error fetching joke:', data.message);
+                            document.getElementById('joke').innerText = 'Error occurred while fetching a joke.';
+                        } else {
+                            const joke = data.joke || `${data.setup} ${data.delivery}`;
+                            document.getElementById('joke').innerText = joke;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching joke:', error);
+                        document.getElementById('joke').innerText = 'Error occurred while fetching a joke.';
+                    });
+            }
+
+            fetchRandomJoke();
+
+            setInterval(fetchRandomJoke, 60000);
+        });
+    </script>
+
+        </div> 
+
+    </div>
+  </div>
+	    <a href="https://info.flagcounter.com/WgIp"><img src="https://s11.flagcounter.com/count2/WgIp/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 
       <!--======================= About========================-->
 
@@ -627,151 +774,6 @@ The software has an easy-to-use interface that guarantees consistent performance
             </div>
 
 
-    <script>       
-      <div class="row">
-        <div class="col-sm-6">
-          <div id="email" onclick="showhideEmail()">Show my email</div>
-          <script src="email.js"></script>
-        </div>
-
-        <div class="col-sm-6">
-    <div id="weather-info">
-        <h2>Weather Information</h2>
-        <p id="temperature"></p>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Replace 'YOUR_API_KEY' with your actual Weatherbit API key
-            const apiKey = '75768b7c65864c7eba36a061cd1d9df3';
-            const city = 'Cincinnati'; // Replace with the desired city
-
-            const apiUrl = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}`;
-
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    if (data && data.data && data.data.length > 0) {
-                        const temperature = data.data[0].temp;
-                        document.getElementById('temperature').innerText = `Current Temperature: ${temperature}°C`;
-                    } else {
-                        document.getElementById('temperature').innerText = 'Unable to fetch weather data.';
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching weather data:', error);
-                    document.getElementById('temperature').innerText = 'Error occurred while fetching weather data.';
-                });
-        });
-    </script>
-</div>
-		<div class="col-sm-3">
-		      <p>Page tracker</p>
-		      <a href="https://info.flagcounter.com/IKVB"><img src="https://s11.flagcounter.com/count2/IKVB/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_249/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
-		    </div>
-
-          <div class="col-sm-3">
-            <script>
-            // Function to set or retrieve the value of a cookie
-            function setCookie(name, value, days) {
-              var expires = "";
-              if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-              }
-              document.cookie = name + "=" + (value || "") + expires + "; path=/";
-            }
-
-            function getCookie(name) {
-              var nameEQ = name + "=";
-              var ca = document.cookie.split(';');
-              for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-              }
-              return null;
-            }
-
-            function displayWelcomeMessage() {
-              var lastVisit = getCookie("lastVisit");
-              if (!lastVisit) {
-                setCookie("lastVisit", new Date().toISOString(), 30); // Set cookie to expire in 30 days
-                alert("Welcome to my homepage!");
-              } else {
-                // Returning visit
-                var lastVisitDate = new Date(lastVisit);
-                alert("Welcome back! Your last visit was " + lastVisitDate.toLocaleString());
-                setCookie("lastVisit", new Date().toISOString(), 30); 
-              }
-            }
-            window.onload = displayWelcomeMessage; 
-          </script>
-
-          </div>
-          <div id="button"></div>
-
-<script type="text/babel">
-function GifComponent() {
-    const [showGif, setShowGif] = React.useState(false);
-
-    return (
-        <div>
-            <h1 id="giff">GIF Integration with React</h1>
-            <button onClick={() => setShowGif(!showGif)}>
-                {showGif ? "Hide GIF" : "Show GIF"}
-            </button>
-            {showGif && (
-                <img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" alt="GIF" />
-            )}
-        </div>
-    );
-}
-
-ReactDOM.render(<GifComponent />, document.getElementById("button"));
-</script>
-</div>
-           <div id="response">
-    <div id="joke-container">
-        <h2>Random Joke</h2>
-        <p id="joke"></p>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const apiKey = 'YOUR_API_KEY';
-
-            function fetchRandomJoke() {
-                const apiUrl = 'https://v2.jokeapi.dev/joke/Any'; // You can customize the API endpoint
-
-                fetch(apiUrl)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.error) {
-                            console.error('Error fetching joke:', data.message);
-                            document.getElementById('joke').innerText = 'Error occurred while fetching a joke.';
-                        } else {
-                            const joke = data.joke || `${data.setup} ${data.delivery}`;
-                            document.getElementById('joke').innerText = joke;
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error fetching joke:', error);
-                        document.getElementById('joke').innerText = 'Error occurred while fetching a joke.';
-                    });
-            }
-
-            fetchRandomJoke();
-
-            setInterval(fetchRandomJoke, 60000);
-        });
-    </script>
-
-        </div> 
-
-    </div>
-  </div>
 
 
       <!--===================== Contact Me =====================-->
@@ -895,7 +897,7 @@ ReactDOM.render(<GifComponent />, document.getElementById("button"));
           </div>
         </div>
 
-        <p class="footer__copy">&#169; Venkatesh. All right reserved</p>
+        <p class="footer__copy">&#169;  All right reserved</p>
       </div>
     </footer>
 
