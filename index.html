@@ -124,16 +124,13 @@
             $("#response" ).html( "A programming joke of the day: " + result.joke);
         }
     );
-    $.get("https://api.weatherbit.io/v2.0/current", {
-        lat: 35.7796,
-        lon: -78.6382,
-        key: 'd3c5bc78d8ec436f9dfa0501eab835ac',
-        include: 'minutely'
-    }, function(result) {
-        console.log("From Weatherbit API: " + JSON.stringify(result));
-    
-        $("#response").html("Temperature: " + result.data[0].temp + "°C"); // Adjust according to the actual structure of the response
-    });
+    $.get("https://xkcd.com/info.0.json",
+        function (result) {
+            console.log("From API: " + JSON.stringify(result));
+            $("#response" ).html( "Picture of the day: " + result.img);
+        }
+    );
+
 
     async function guessAge(name){
         const response = await fetch("https://api.agify.io/?name="+name);
