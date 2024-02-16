@@ -125,6 +125,12 @@
         }
     ); //this will be executed automatically
     //https://api.agify.io/?name=phung
+        $.get("https://api.weatherbit.io/v2.0/current",
+        function (result) {
+            console.log("From jokeAPI: " + JSON.stringify(result));
+            $("#response" ).html( "weather: " + result);
+        }
+    ); //this will be executed automatically
     async function guessAge(name){
         const response = await fetch("https://api.agify.io/?name="+name);
         const result = await response.json();
