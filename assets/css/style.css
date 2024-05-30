@@ -262,7 +262,7 @@ h6 {
   min-width: 300px;
   color: #fff;
 }
-#hero-container aos-init aos-animate{
+#hero .hero-container aos-init aos-animate{
   position: relative;
   z-index: 2;
   min-width: 300px;
