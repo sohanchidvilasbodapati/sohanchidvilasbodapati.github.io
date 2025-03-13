@@ -5,7 +5,7 @@ function showhideEmail() {
     document.getElementById('email').innerHTML = "Show my email";
     shown = false;
   } else {
-    var myemail = "<a href='mailto:bodapass" + "@" + "mail.uc.edu'>bodapass" + "@" + "mail.uc.edu</a>";
+    var myemail = "<a href='mailto:sohanchidvilas" + "@" + "mail.uc.edu'>sohanchidvilas" + "@" + "gmail.com</a>";
     document.getElementById('email').innerHTML = myemail;
     shown = true;
   }
